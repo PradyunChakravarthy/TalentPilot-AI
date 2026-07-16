@@ -1,0 +1,20 @@
+TalentPilot-AI
+│
+├── backend
+│
+│── app
+│   │
+│   ├── api
+│   ├── core
+│   ├── db
+│   ├── models
+│   ├── schemas
+│   ├── services
+│   ├── repositories
+│   ├── middleware
+│   ├── utils
+│   ├── llm
+│   ├── agents
+│   ├── tools
+│   │
+│   └── main.py
