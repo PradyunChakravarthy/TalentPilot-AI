@@ -1,17 +1,28 @@
-from pydantic_settings import BaseSettings
 from functools import lru_cache
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    APP_NAME: str = "TalentPilot AI"
 
-    APP_VERSION: str = "0.1.0"
+    APP_NAME: str
 
-    DEBUG: bool = True
+    APP_VERSION: str
 
+    DEBUG: bool
 
-    class Config:
-        env_file = ".env"
+    DATABASE_URL: str
+
+    JWT_SECRET_KEY: str
+
+    LLM_PROVIDER: str
+
+    GROQ_API_KEY: str = ""
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        case_sensitive=True,
+    )
 
 
 @lru_cache

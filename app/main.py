@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from app.core.config import get_settings
 from app.api.health import router as health_router
+from core.logger import setup_logger
+
+logger = setup_logger()
+
 settings =  get_settings()
 
 def create_app()-> FastAPI:
@@ -13,4 +17,5 @@ def create_app()-> FastAPI:
     app.include_router(health_router)
     return app
 
+logger.info("Application is up and running")
 app = create_app()

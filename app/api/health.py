@@ -1,13 +1,27 @@
 from fastapi import APIRouter
 from datetime import datetime
+from app.core.config import get_settings
 
-router = APIRouter(prefix="/health", tags=["Health"])
+router = APIRouter(
+    prefix="/health",
+    tags=["Health"]
+)
 
-@router.get("")
-def health_check():
+settings = get_settings()
+
+@router.get("/")
+def health():
+
     return {
-        "status": "healthy, up and running",
-        "application": "TalentPilot AI",
-        "version": "0.1.0",
-        "timestamp": datetime.utcnow().isoformat()
+
+        "status": "healthy",
+
+        "application": settings.APP_NAME,
+
+        "version": settings.APP_VERSION,
+
+        "timestamp": datetime.now().isoformat(),
+
+        "environment": "development",
+
     }
