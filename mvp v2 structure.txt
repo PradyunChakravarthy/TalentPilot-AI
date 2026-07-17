@@ -1,0 +1,73 @@
+                    Recruiter
+
+                        │
+
+                 Upload Resume
+
+                        │
+
+                        ▼
+
+              PDF Text Extraction
+
+                        │
+
+                        ▼
+
+          LangChain Resume Parser
+
+                        │
+
+                        ▼
+
+      Structured Candidate JSON
+
+                        │
+
+                        ▼
+
+         Candidate Validation
+
+                        │
+
+                        ▼
+
+         Store Candidate (DB)
+
+                        │
+
+                        ▼
+
+         View Candidate List
+
+                        │
+
+                        ▼
+
+          Upload Job Description
+
+                        │
+
+                        ▼
+
+          LangGraph Workflow
+
+                        │
+
+        ┌───────────────┴────────────────┐
+
+        ▼                                ▼
+
+  JD Analyzer Agent             Candidate Matcher
+
+        │                                │
+
+        └───────────────┬────────────────┘
+
+                        ▼
+
+             Top Matching Candidates
+
+                        ▼
+
+          Interview Question Generator
