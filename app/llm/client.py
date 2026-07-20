@@ -1,5 +1,7 @@
 from langchain_groq import ChatGroq
-from app.core.config import settings
+from app.core.config import get_settings
+
+settings = get_settings()
 
 llm = ChatGroq(
     model = settings.LLM_MODEL,
