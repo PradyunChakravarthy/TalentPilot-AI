@@ -5,6 +5,7 @@ from app.db.init_db import init_db
 from app.core.logger import setup_logger
 from contextlib import asynccontextmanager
 from app.api.resume import router as resume_router
+from app.api import job_description
 
 logger = setup_logger()
 
@@ -28,6 +29,11 @@ def create_app()-> FastAPI:
         resume_router,
         prefix="/resume",
         tags=["Resume"]
+    )
+    app.include_router(
+        job_description.router,
+        prefix = "/job-description",
+        tags = ["Job Descritption"],
     )
     return app
 
